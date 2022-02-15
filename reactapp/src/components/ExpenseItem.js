@@ -1,8 +1,10 @@
+import ExpenseDate from "./ExpenseDate";
+
 function ExpenseItem(props){
-    console.log(props)
+
     return(
      <div className="expense-item">
-         <div>{props.info.date.toISOString()}</div>
+         <ExpenseDate date={props.info.date}/>
          <div className="expense-item__description">
              <h2>{props.info.title}</h2>
              <div className="expense-item__price">${props.info.amount}</div>
