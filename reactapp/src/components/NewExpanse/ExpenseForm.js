@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const [values, setValues] = useState({ title: "", amount: "", date: "" });
   const onChangeHandler = (name) => (event) => {
     setValues((prevState) => {
@@ -10,7 +10,7 @@ const ExpenseForm = () => {
 
   const submitHandler = (event) =>{
       event.preventDefault();
-      console.log(values)
+      props.onSubmitData(values)
   }
   return (
     <form onSubmit={submitHandler}>

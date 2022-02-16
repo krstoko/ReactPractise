@@ -1,9 +1,12 @@
 import React from "react";
 import ExpenseForm from "./ExpenseForm";
-const NewExpanse = () => {
+const NewExpanse = (props) => {
+    const onSubmitData = (savedData) =>{
+        props.addExpenseHandler(savedData)
+    }
   return (
     <div className="new-expense">
-      <ExpenseForm />
+      <ExpenseForm onSubmitData={onSubmitData}/>
     </div>
   );
 };
