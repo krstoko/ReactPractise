@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 
 const ExpenseForm = () => {
-  const [values, setValues] = useState({ title: "", amount: 0, date: "" });
+  const [values, setValues] = useState({ title: "", amount: "", date: "" });
   const onChangeHandler = (name) => (event) => {
-    setValues({ ...values, [name]: event.target.value });
+    setValues((prevState) => {
+      return { ...prevState, [name]: event.target.value };
+    });
   };
+
+  const submitHandler = (event) =>{
+      event.preventDefault();
+      console.log(values)
+  }
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
