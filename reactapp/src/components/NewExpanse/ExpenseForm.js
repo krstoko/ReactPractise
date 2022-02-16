@@ -10,7 +10,12 @@ const ExpenseForm = (props) => {
 
   const submitHandler = (event) =>{
       event.preventDefault();
-      props.onSubmitData(values)
+      let expense = {
+          title: values.title,
+          amount: values.amount,
+          date: new Date(values.date)
+      }
+      props.onSubmitData(expense)
   }
   return (
     <form onSubmit={submitHandler}>

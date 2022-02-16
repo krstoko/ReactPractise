@@ -12,7 +12,7 @@ function App() {
   ]);
 
   const addExpenseHandler = (newExpense) =>{
-    setExpenses((prevState) => [...prevState,newExpense])
+    setExpenses((prevState) => [newExpense,...prevState])
   }
   return (
     <div className="App">
