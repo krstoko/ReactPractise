@@ -4,15 +4,16 @@ import AddUser from "./components/Users/AddUser";
 import UsersList from "./components/Users/UsersList";
 
 function App() {
-  const [usersList, setUsersList] = useState([
-    {
-      username: "Krsto",
-      age: 23,
-    },
-  ]);
+  const [usersList, setUsersList] = useState([]);
+
+  const addNewUser = (values) => {
+    setUsersList((prevState) => {
+      return [values, ...prevState];
+    });
+  };
   return (
     <div className="App">
-      <AddUser />
+      <AddUser addNewUser={addNewUser} />
       <UsersList users={usersList} />
     </div>
   );

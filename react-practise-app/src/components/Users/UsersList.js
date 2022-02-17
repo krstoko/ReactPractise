@@ -5,14 +5,13 @@ const UsersList = (props) => {
   return (
     <Card className="users">
       <ul>
-        {props.users.map((user) => {
+        {props.users.map((user,id) => {
           return (
-            <li>
+            <li key={id}>
               {user.username} ({user.age}) years old
             </li>
           );
         })}
-        dasd
       </ul>
     </Card>
   );
