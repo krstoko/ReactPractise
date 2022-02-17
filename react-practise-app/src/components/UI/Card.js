@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const S = {};
 S.Card = styled.div`
+
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -32,6 +33,23 @@ S.Card = styled.div`
   &.input input:focus {
     outline: none;
     border-color: #4f005f;
+  }
+
+  &.users {
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 40rem;
+  }
+  
+  &.users ul {
+    list-style: none;
+    padding: 1rem;
+  }
+  
+  &.users li {
+    border: 1px solid #ccc;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
   }
 `;
 const Card = (props) => {

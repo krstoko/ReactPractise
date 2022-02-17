@@ -1,10 +1,21 @@
+import { useState } from "react";
 import "./App.css";
 import AddUser from "./components/Users/AddUser";
+import UsersList from "./components/Users/UsersList";
 
 function App() {
-  return <div className="App">
-    <AddUser />
-  </div>;
+  const [usersList, setUsersList] = useState([
+    {
+      username: "Krsto",
+      age: 23,
+    },
+  ]);
+  return (
+    <div className="App">
+      <AddUser />
+      <UsersList users={usersList} />
+    </div>
+  );
 }
 
 export default App;
